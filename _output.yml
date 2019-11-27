@@ -11,6 +11,6 @@ bookdown::gitbook:
       theme: white
       family: sans
       size: 1
-    edit: https://github.com/retodomax/R_Ref_Book/edit/master/%s
+    edit: https://github.com/retodomax/PC_Ref_Book/edit/master/%s
   includes:
     in_header: header.html
