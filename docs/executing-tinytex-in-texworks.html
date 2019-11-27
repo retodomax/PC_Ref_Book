@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 1 Executing TinyTeX in TeXworks | PC Reference book</title>
+  <meta name="description" content="This is a collection of useful PC knowledge" />
+  <meta name="generator" content="bookdown 0.14 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 1 Executing TinyTeX in TeXworks | PC Reference book" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:image" content="figures/01_cover/Cover.svg" />
+  <meta property="og:description" content="This is a collection of useful PC knowledge" />
+  <meta name="github-repo" content="retodomax/R_Ref_Book" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 1 Executing TinyTeX in TeXworks | PC Reference book" />
+  
+  <meta name="twitter:description" content="This is a collection of useful PC knowledge" />
+  <meta name="twitter:image" content="figures/01_cover/Cover.svg" />
+
+<meta name="author" content="Reto Zihlmann" />
+
+
+<meta name="date" content="2019-11-27" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  <link rel="shortcut icon" href="figures/00_icon/icon2.ico" type="image/x-icon" />
+<link rel="prev" href="index.html"/>
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<!––JavaScript code for Show/Hide buttons––>
+<!––see: https://web.stanford.edu/~naras/post/toggle-visibility-of-solutions-in-bookdown/––>
+<!––and see: https://www.w3schools.com/howto/howto_js_toggle_hide_show.asp––>
+
+<script>
+function myFunction(myid) {
+  var x = document.getElementById(myid);
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+</script>
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">PC Reference book</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Introduction</a></li>
+<li class="chapter" data-level="1" data-path="executing-tinytex-in-texworks.html"><a href="executing-tinytex-in-texworks.html"><i class="fa fa-check"></i><b>1</b> Executing TinyTeX in TeXworks</a><ul>
+<li class="chapter" data-level="1.1" data-path="executing-tinytex-in-texworks.html"><a href="executing-tinytex-in-texworks.html#write-command-line-code"><i class="fa fa-check"></i><b>1.1</b> 1. Write Command line code</a></li>
+<li class="chapter" data-level="1.2" data-path="executing-tinytex-in-texworks.html"><a href="executing-tinytex-in-texworks.html#save"><i class="fa fa-check"></i><b>1.2</b> 2. Save</a></li>
+<li class="chapter" data-level="1.3" data-path="executing-tinytex-in-texworks.html"><a href="executing-tinytex-in-texworks.html#add-as-engine"><i class="fa fa-check"></i><b>1.3</b> 3. Add as engine</a></li>
+<li class="chapter" data-level="1.4" data-path="executing-tinytex-in-texworks.html"><a href="executing-tinytex-in-texworks.html#useful-links"><i class="fa fa-check"></i><b>1.4</b> Useful links</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">PC Reference book</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="executing-tinytex-in-texworks" class="section level1">
+<h1><span class="header-section-number">Chapter 1</span> Executing TinyTeX in TeXworks</h1>
+<p>(Anleitung on Windows)</p>
+<div id="write-command-line-code" class="section level2">
+<h2><span class="header-section-number">1.1</span> 1. Write Command line code</h2>
+<p>Write a text file with the following command line code</p>
+<p>On Windows:</p>
+<p><code>"C:\Program Files\R\R-3.6.1\bin\Rscript.exe" -e "tinytex::pdflatex('%1')"</code></p>
+<p>If the command <code>Rscript</code> is in the PATH (can be found by the shell which might be the case on Linux) this command might be sufficient:</p>
+<p><code>Rscript -e "tinytex::pdflatex('%1')"</code></p>
+</div>
+<div id="save" class="section level2">
+<h2><span class="header-section-number">1.2</span> 2. Save</h2>
+<p>Save the text file as batch file (e.g. <code>RetoTinyTeX.bat</code>) at a stable location on your computer.</p>
+<p>(on Linux another type of executable file e.g. <code>.sh</code>)</p>
+</div>
+<div id="add-as-engine" class="section level2">
+<h2><span class="header-section-number">1.3</span> 3. Add as engine</h2>
+<p>Open TeXworks, go to <code>Edit</code> –&gt; `<code>Preferences...</code> –&gt; <code>Typesetting</code></p>
+<p>At Processing tools click the Plus button. Opens Window “Tool Configuration”</p>
+<ul>
+<li>Name: RetoTinyTeX</li>
+<li>Program: C:/Users/Reto/OneDrive - ETHZ/Dokumente/R/RetoTinyTeX/RetoTinyTeX.bat</li>
+<li>Arguments: $fullname</li>
+</ul>
+<p>Click OK and choose RetoTinyTeX as your default Processing tools</p>
+</div>
+<div id="useful-links" class="section level2">
+<h2><span class="header-section-number">1.4</span> Useful links</h2>
+<p><a href="https://tex.stackexchange.com/questions/85417/configuring-texworks-processing-tools?newreg=f316adb0b447443fb618ea7e87e5dded" class="uri">https://tex.stackexchange.com/questions/85417/configuring-texworks-processing-tools?newreg=f316adb0b447443fb618ea7e87e5dded</a></p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 1
+},
+"edit": {
+"link": "https://github.com/retodomax/R_Ref_Book/edit/master/01-intro.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "section"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

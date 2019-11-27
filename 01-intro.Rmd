@@ -1,0 +1,40 @@
+# Executing TinyTeX in TeXworks
+
+(Anleitung on Windows)
+
+## 1. Write Command line code
+
+Write a text file with the following command line code
+
+On Windows:
+
+`"C:\Program Files\R\R-3.6.1\bin\Rscript.exe" -e "tinytex::pdflatex('%1')"`
+
+If the command `Rscript` is in the PATH (can be found by the shell which might be the case on Linux) this command might be sufficient:
+
+`Rscript -e "tinytex::pdflatex('%1')"`
+
+## 2. Save
+
+Save the text file as batch file (e.g. `RetoTinyTeX.bat`) at a stable location on your computer.
+
+(on Linux another type of executable file e.g. `.sh`)
+
+## 3. Add as engine
+
+Open TeXworks, go to `Edit` --> ``Preferences...` --> `Typesetting`
+
+At Processing tools click the Plus button. Opens Window "Tool Configuration"
+
+- Name: RetoTinyTeX
+- Program: C:/Users/Reto/OneDrive - ETHZ/Dokumente/R/RetoTinyTeX/RetoTinyTeX.bat
+- Arguments: $fullname
+
+Click OK and choose RetoTinyTeX as your default Processing tools
+
+
+
+## Useful links
+
+https://tex.stackexchange.com/questions/85417/configuring-texworks-processing-tools?newreg=f316adb0b447443fb618ea7e87e5dded
+

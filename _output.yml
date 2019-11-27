@@ -1,0 +1,16 @@
+bookdown::gitbook:
+  css: style.css
+  config:
+    toc:
+      collapse: section
+      before: |
+        <li><a href="./">PC Reference book</a></li>
+      after: |
+        <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+    fontsettings:
+      theme: white
+      family: sans
+      size: 1
+    edit: https://github.com/retodomax/R_Ref_Book/edit/master/%s
+  includes:
+    in_header: header.html
