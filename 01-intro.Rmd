@@ -2,7 +2,8 @@
 
 (Anleitung on Windows)
 
-## 1. Write Command line code
+
+## Write Command line code
 
 Write a text file with the following command line code
 
@@ -14,13 +15,13 @@ If the command `Rscript` is in the PATH (can be found by the shell which might b
 
 `Rscript -e "tinytex::pdflatex('%1')"`
 
-## 2. Save
+## Save
 
 Save the text file as batch file (e.g. `RetoTinyTeX.bat`) at a stable location on your computer.
 
 (on Linux another type of executable file e.g. `.sh`)
 
-## 3. Add as engine
+## Add as engine
 
 Open TeXworks, go to `Edit` --> ``Preferences...` --> `Typesetting`
 
@@ -37,4 +38,3 @@ Click OK and choose RetoTinyTeX as your default Processing tools
 ## Useful links
 
 https://tex.stackexchange.com/questions/85417/configuring-texworks-processing-tools?newreg=f316adb0b447443fb618ea7e87e5dded
-
