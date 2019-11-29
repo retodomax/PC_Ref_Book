@@ -1,0 +1,28 @@
+# Reference management with LaTeX
+
+
+## Install Biber
+
+On Windows: Powershell --> `tlmgr install biber`
+(seems to be NOT automatically installed with package `biblatex`)
+
+
+## In Texworks
+
+Always run
+
+1. pdflatex
+2. biber
+3. pdflatex (again)
+
+Or write bash script which runs the comands in this order
+
+## In RStudio
+
+Biber and knitr can make some problems togeter (see [here](https://tex.stackexchange.com/questions/71565/knitr-and-biblatex))
+
+Easy workarround: use backend bibtex instead of backend biber
+
+`\usepackage[backend=bibtex]{biblatex}`
+
+
