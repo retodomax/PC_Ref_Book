@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>PC Reference book</title>
+  <title>Chapter 4 Linux setup Kubuntu | PC Reference book</title>
   <meta name="description" content="This is a collection of useful PC knowledge" />
   <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="PC Reference book" />
+  <meta property="og:title" content="Chapter 4 Linux setup Kubuntu | PC Reference book" />
   <meta property="og:type" content="book" />
   
   <meta property="og:image" content="figures/01_cover/Cover.svg" />
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="retodomax/PC_Ref_Book" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="PC Reference book" />
+  <meta name="twitter:title" content="Chapter 4 Linux setup Kubuntu | PC Reference book" />
   
   <meta name="twitter:description" content="This is a collection of useful PC knowledge" />
   <meta name="twitter:image" content="figures/01_cover/Cover.svg" />
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   <link rel="shortcut icon" href="figures/00_icon/icon2.ico" type="image/x-icon" />
+<link rel="prev" href="remap-keybord.html"/>
 
-<link rel="next" href="executing-tinytex-in-texworks.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -192,29 +192,118 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">PC Reference book</h1>
-<p class="author"><em>Reto Zihlmann</em></p>
-<p class="date"><em>2020-05-14</em></p>
+<div id="linux-setup-kubuntu" class="section level1">
+<h1><span class="header-section-number">Chapter 4</span> Linux setup Kubuntu</h1>
+<div id="installation" class="section level2">
+<h2><span class="header-section-number">4.1</span> Installation</h2>
+<ul>
+<li>Boot from USB</li>
+<li>Define partitions
+<ul>
+<li>SWAP, no mount point, 10GB, Primary,</li>
+<li>root, mount: /, 40GB, Primary, ext4</li>
+<li>home, mount: /home, as much as possible, Primary, ext4</li>
+</ul></li>
+</ul>
 </div>
-<div id="introduction" class="section level1 unnumbered">
-<h1>Introduction</h1>
-<p><img src="figures/01_cover/Cover2.png" width="50%" style="display: block; margin: auto;" /></p>
-<hr />
-<p>This book contains a not final and constantely growing collection of useful PC knowledge.
-The book is written in <a href="https://rmarkdown.rstudio.com/">RMarkdown</a> with <a href="https://bookdown.org/">bookdown</a>.</p>
-<hr />
-<p><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons Licence" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.</p>
-<hr />
+<div id="easy-tasks" class="section level2">
+<h2><span class="header-section-number">4.2</span> Easy tasks</h2>
+<ol style="list-style-type: decimal">
+<li>Setup external screen</li>
+<li>Install software
+<ul>
+<li>From Software Center
+<ul>
+<li>Kile</li>
+<li>ownCloud desktop sync client (Polybox)</li>
+<li>zotero-snap</li>
+<li>gscan2pdf</li>
+</ul></li>
+<li>From downloaded tar
+<ul>
+<li>Google Chrome</li>
+<li>R Studio</li>
+</ul></li>
+<li>From Konsole
+<ul>
+<li><code>sudo apt install git-all</code> (For configuration see git chapter)</li>
+</ul></li>
+</ul></li>
+</ol>
+</div>
+<div id="installing-r" class="section level2">
+<h2><span class="header-section-number">4.3</span> Installing R</h2>
+<p>See <a href="https://itsfoss.com/install-r-ubuntu/">It’s FOSS</a> and <a href="https://cran.r-project.org/bin/linux/ubuntu/README.html">R Documentation</a></p>
+<ol style="list-style-type: decimal">
+<li>Add CRAN repository to apt (Exact command depends on Ubuntu version)</li>
+</ol>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="ex">deb</span> https://cloud.r-project.org/bin/linux/ubuntu focal-cran40/</a></code></pre></div>
+<ol start="2" style="list-style-type: decimal">
+<li>Add key to repository</li>
+</ol>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="fu">sudo</span> apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E298A3A825C0D65DFD57CBB651716619E084DAB9</a></code></pre></div>
+<ol start="3" style="list-style-type: decimal">
+<li>Update and install</li>
+</ol>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="fu">sudo</span> apt update</a>
+<a class="sourceLine" id="cb4-2" data-line-number="2"><span class="fu">sudo</span> apt install r-base</a></code></pre></div>
+</div>
+<div id="remap-keyboard" class="section level2">
+<h2><span class="header-section-number">4.4</span> Remap Keyboard</h2>
+<ol style="list-style-type: decimal">
+<li>Go to Software center and install ‘AutoKey (Qt)’</li>
+<li>Open AutoKey</li>
+<li>Click on <code>New...</code> &gt; <code>Folder</code> and name it e.g Umlaute</li>
+<li>Make 6 new <code>Phrase</code> within that folder and name them ae, Ae, oe, Oe, …</li>
+<li>In the text field put the desired Character</li>
+<li>Set a hotkey (e.g. alt+’)</li>
+</ol>
+<p>Problem: Capital umlaute are made small. Fix: Add some Emoji after the capital Umlaut.</p>
+<p>Next: Remap Caps Lock to alt…</p>
+</div>
+<div id="installing-latex" class="section level2">
+<h2><span class="header-section-number">4.5</span> Installing Latex</h2>
+<ol style="list-style-type: decimal">
+<li>Uninstall preinstalled light TexLive with commands found on <a href="https://tex.stackexchange.com/questions/95483/how-to-remove-everything-related-to-tex-live-for-fresh-install-on-ubuntu">StackOverflow</a></li>
+<li>Install <a href="https://yihui.org/tinytex/">TinyTeX</a> from R console</li>
+<li>Add TinyTeX Built to Kile
+<ul>
+<li>Open Kile</li>
+<li><code>Settings</code> &gt; <code>Configure Kile</code> &gt; <code>Build</code></li>
+<li>Select a tool: <code>New...</code></li>
+<li>Name: RZTinyTeX</li>
+<li>Class: <Custom></li>
+<li>General: Command: Rscript</li>
+<li>General: Options: -e “tinytex::pdflatex(‘%source’)”</li>
+</ul></li>
+<li>Configure Shortcut for pdflatex and RZTinyTex</li>
+</ol>
+</div>
+<div id="troubles" class="section level2">
+<h2><span class="header-section-number">4.6</span> Troubles</h2>
+<div id="locales" class="section level3">
+<h3><span class="header-section-number">4.6.1</span> Locales</h3>
+<p>Some actions at Konsole might give error ‘perl: warning: Setting locale failed.’</p>
+<p>See solution <a href="https://libre-software.net/ubuntu-setting-locale/">here</a></p>
+<p>Check which local settings are missing</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="ex">locale</span></a></code></pre></div>
+<p>Might return ‘locale: Cannot set LC_ALL to default locale: No such file or directory’</p>
+<p>The solution is to export the missing locales to ~/.bash_profile. The following command is a one-command line:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb6-1" data-line-number="1"><span class="bu">echo</span> <span class="st">&quot;export LANGUAGE=en_US.UTF-8 export LANG=en_US.UTF-8 export LC_ALL=en_US.UTF-8&quot;</span><span class="op">&gt;&gt;</span>~/.bash_profile</a></code></pre></div>
+</div>
+<div id="section" class="section level3">
+<h3><span class="header-section-number">4.6.2</span> </h3>
 
+</div>
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
+<a href="remap-keybord.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 
-<a href="executing-tinytex-in-texworks.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -245,7 +334,7 @@ gitbook.start({
 "size": 1
 },
 "edit": {
-"link": "https://github.com/retodomax/PC_Ref_Book/edit/master/index.Rmd",
+"link": "https://github.com/retodomax/PC_Ref_Book/edit/master/04-Kubuntu.Rmd",
 "text": "Edit"
 },
 "history": {

@@ -1,0 +1,101 @@
+# Linux setup Kubuntu
+
+## Installation
+
+* Boot from USB
+* Define partitions
+    - SWAP, no mount point, 10GB, Primary,
+    - root, mount: /, 40GB, Primary, ext4
+    - home, mount: /home, as much as possible, Primary, ext4
+    
+
+
+## Easy tasks
+
+1. Setup external screen
+2. Install software
+    - From Software Center
+        + Kile
+        + ownCloud desktop sync client (Polybox)
+        + zotero-snap
+        + gscan2pdf
+    - From downloaded tar
+        + Google Chrome
+        + R Studio
+    - From Konsole
+        + `sudo apt install git-all` (For configuration see git chapter)
+
+## Installing R
+
+See [It's FOSS](https://itsfoss.com/install-r-ubuntu/) and [R Documentation](https://cran.r-project.org/bin/linux/ubuntu/README.html)
+
+1. Add CRAN repository to apt (Exact command depends on Ubuntu version)
+
+```bash
+deb https://cloud.r-project.org/bin/linux/ubuntu focal-cran40/
+```
+
+2. Add key to repository
+
+```bash
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E298A3A825C0D65DFD57CBB651716619E084DAB9
+```
+
+3. Update and install
+
+```bash
+sudo apt update
+sudo apt install r-base
+```
+    
+
+## Remap Keyboard
+
+1. Go to Software center and install 'AutoKey (Qt)'
+2. Open AutoKey
+3. Click on `New...` > `Folder` and name it e.g Umlaute
+4. Make 6 new `Phrase` within that folder and name them ae, Ae, oe, Oe, ...
+5. In the text field put the desired Character
+6. Set a hotkey (e.g. alt+')
+
+Problem: Capital umlaute are made small. Fix: Add some Emoji after the capital Umlaut.
+
+Next: Remap Caps Lock to alt...
+
+## Installing Latex
+
+1. Uninstall preinstalled light TexLive with commands found on [StackOverflow](https://tex.stackexchange.com/questions/95483/how-to-remove-everything-related-to-tex-live-for-fresh-install-on-ubuntu)
+2. Install [TinyTeX](https://yihui.org/tinytex/) from R console
+3. Add TinyTeX Built to Kile
+    - Open Kile
+    - `Settings` > `Configure Kile` > `Build`
+    - Select a tool: `New...`
+    - Name: RZTinyTeX
+    - Class: <Custom>
+    - General: Command: Rscript
+    - General: Options: -e "tinytex::pdflatex('%source')"
+4. Configure Shortcut for pdflatex and RZTinyTex
+
+## Troubles
+
+### Locales
+
+Some actions at Konsole might give error 'perl: warning: Setting locale failed.'
+
+See solution [here](https://libre-software.net/ubuntu-setting-locale/)
+
+Check which local settings are missing
+
+```bash
+locale
+```
+Might return 'locale: Cannot set LC_ALL to default locale: No such file or directory'
+
+The solution is to export the missing locales to ~/.bash_profile. The following command is a one-command line:
+
+```bash
+echo "export LANGUAGE=en_US.UTF-8 export LANG=en_US.UTF-8 export LC_ALL=en_US.UTF-8">>~/.bash_profile
+```
+
+### 
+

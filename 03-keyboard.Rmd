@@ -1,0 +1,80 @@
+# Remap keybord
+
+Goal: English Keyboard with easy accessable öäüÖÄÜ on Windows
+
+## Remap `Caps lock` to `Alt Gr`/`right Alt`
+
+See description here:
+
+- https://www.howtogeek.com/194705/how-to-disable-or-reassign-the-caps-lock-key-on-any-operating-system/
+- https://www.howtogeek.com/140009/how-to-turn-your-caps-lock-key-into-a-chrome-os-style-search-key/
+
+
+1. Download `.msi` file from https://github.com/randyrants/sharpkeys/releases and install SharpKeys
+2. Open sharp keys and remap `Caps lock` to `Alt Gr`
+
+
+## Make new Keyboard Shortcut with Autohotkey
+
+- https://www.howtogeek.com/howto/21187/insert-any-special-character-with-a-single-keystroke/
+- https://thejournal.com/articles/2016/01/26/how-to-create-keyboard-shortcuts-for-special-characters-in-windows-10.aspx
+
+1. Download Autohotkey installer and install
+2. Go to desktop > right click > New > AutoHotkeyScript.ahk
+3. Writ this into the file
+
+```
+#NoEnv  ; Recommended for performance and compatibility with future AutoHotkey releases.
+; #Warn  ; Enable warnings to assist with detecting common errors.
+SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
+SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
+
+!;::
+{
+SendInput {ö}
+}
+return
+
+!'::
+{
+SendInput {ä}
+}
+return
+
+![::
+{
+SendInput {ü}
+}
+return
+
++!;::
+{
+SendInput {Ö}
+}
+return
+
++!'::
+{
+SendInput {Ä}
+}
+return
+
++![::
+{
+SendInput {Ü}
+}
+return
+```
+
+- `+` means `Shift`
+- `!` means `Alt`
+
+4. Double click on script to execute
+5. Test if it works (try to type öäü)
+6. Add Script to start-up items so that it launches automatically at startup
+    - Create Shortcut (Verknüpfung) of script
+    - Type `Win` + `R`
+    - Write `shell:startup`
+    - Place the shortcut in that folder
+7. Restart Computer and see if it works
+

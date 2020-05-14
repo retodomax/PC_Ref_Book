@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>PC Reference book</title>
+  <title>Chapter 3 Remap keybord | PC Reference book</title>
   <meta name="description" content="This is a collection of useful PC knowledge" />
   <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="PC Reference book" />
+  <meta property="og:title" content="Chapter 3 Remap keybord | PC Reference book" />
   <meta property="og:type" content="book" />
   
   <meta property="og:image" content="figures/01_cover/Cover.svg" />
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="retodomax/PC_Ref_Book" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="PC Reference book" />
+  <meta name="twitter:title" content="Chapter 3 Remap keybord | PC Reference book" />
   
   <meta name="twitter:description" content="This is a collection of useful PC knowledge" />
   <meta name="twitter:image" content="figures/01_cover/Cover.svg" />
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   <link rel="shortcut icon" href="figures/00_icon/icon2.ico" type="image/x-icon" />
-
-<link rel="next" href="executing-tinytex-in-texworks.html"/>
+<link rel="prev" href="reference-management-with-latex.html"/>
+<link rel="next" href="linux-setup-kubuntu.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -192,29 +192,98 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">PC Reference book</h1>
-<p class="author"><em>Reto Zihlmann</em></p>
-<p class="date"><em>2020-05-14</em></p>
+<div id="remap-keybord" class="section level1">
+<h1><span class="header-section-number">Chapter 3</span> Remap keybord</h1>
+<p>Goal: English Keyboard with easy accessable öäüÖÄÜ on Windows</p>
+<div id="remap-caps-lock-to-alt-grright-alt" class="section level2">
+<h2><span class="header-section-number">3.1</span> Remap <code>Caps lock</code> to <code>Alt Gr</code>/<code>right Alt</code></h2>
+<p>See description here:</p>
+<ul>
+<li><a href="https://www.howtogeek.com/194705/how-to-disable-or-reassign-the-caps-lock-key-on-any-operating-system/" class="uri">https://www.howtogeek.com/194705/how-to-disable-or-reassign-the-caps-lock-key-on-any-operating-system/</a></li>
+<li><a href="https://www.howtogeek.com/140009/how-to-turn-your-caps-lock-key-into-a-chrome-os-style-search-key/" class="uri">https://www.howtogeek.com/140009/how-to-turn-your-caps-lock-key-into-a-chrome-os-style-search-key/</a></li>
+</ul>
+<ol style="list-style-type: decimal">
+<li>Download <code>.msi</code> file from <a href="https://github.com/randyrants/sharpkeys/releases" class="uri">https://github.com/randyrants/sharpkeys/releases</a> and install SharpKeys</li>
+<li>Open sharp keys and remap <code>Caps lock</code> to <code>Alt Gr</code></li>
+</ol>
 </div>
-<div id="introduction" class="section level1 unnumbered">
-<h1>Introduction</h1>
-<p><img src="figures/01_cover/Cover2.png" width="50%" style="display: block; margin: auto;" /></p>
-<hr />
-<p>This book contains a not final and constantely growing collection of useful PC knowledge.
-The book is written in <a href="https://rmarkdown.rstudio.com/">RMarkdown</a> with <a href="https://bookdown.org/">bookdown</a>.</p>
-<hr />
-<p><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons Licence" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.</p>
-<hr />
+<div id="make-new-keyboard-shortcut-with-autohotkey" class="section level2">
+<h2><span class="header-section-number">3.2</span> Make new Keyboard Shortcut with Autohotkey</h2>
+<ul>
+<li><a href="https://www.howtogeek.com/howto/21187/insert-any-special-character-with-a-single-keystroke/" class="uri">https://www.howtogeek.com/howto/21187/insert-any-special-character-with-a-single-keystroke/</a></li>
+<li><a href="https://thejournal.com/articles/2016/01/26/how-to-create-keyboard-shortcuts-for-special-characters-in-windows-10.aspx" class="uri">https://thejournal.com/articles/2016/01/26/how-to-create-keyboard-shortcuts-for-special-characters-in-windows-10.aspx</a></li>
+</ul>
+<ol style="list-style-type: decimal">
+<li>Download Autohotkey installer and install</li>
+<li>Go to desktop &gt; right click &gt; New &gt; AutoHotkeyScript.ahk</li>
+<li>Writ this into the file</li>
+</ol>
+<pre><code>#NoEnv  ; Recommended for performance and compatibility with future AutoHotkey releases.
+; #Warn  ; Enable warnings to assist with detecting common errors.
+SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
+SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
+!;::
+{
+SendInput {ö}
+}
+return
+
+!&#39;::
+{
+SendInput {ä}
+}
+return
+
+![::
+{
+SendInput {ü}
+}
+return
+
++!;::
+{
+SendInput {Ö}
+}
+return
+
++!&#39;::
+{
+SendInput {Ä}
+}
+return
+
++![::
+{
+SendInput {Ü}
+}
+return</code></pre>
+<ul>
+<li><code>+</code> means <code>Shift</code></li>
+<li><code>!</code> means <code>Alt</code></li>
+</ul>
+<ol start="4" style="list-style-type: decimal">
+<li>Double click on script to execute</li>
+<li>Test if it works (try to type öäü)</li>
+<li>Add Script to start-up items so that it launches automatically at startup
+<ul>
+<li>Create Shortcut (Verknüpfung) of script</li>
+<li>Type <code>Win</code> + <code>R</code></li>
+<li>Write <code>shell:startup</code></li>
+<li>Place the shortcut in that folder</li>
+</ul></li>
+<li>Restart Computer and see if it works</li>
+</ol>
+
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-
-<a href="executing-tinytex-in-texworks.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="reference-management-with-latex.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="linux-setup-kubuntu.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -245,7 +314,7 @@ gitbook.start({
 "size": 1
 },
 "edit": {
-"link": "https://github.com/retodomax/PC_Ref_Book/edit/master/index.Rmd",
+"link": "https://github.com/retodomax/PC_Ref_Book/edit/master/03-keyboard.Rmd",
 "text": "Edit"
 },
 "history": {
