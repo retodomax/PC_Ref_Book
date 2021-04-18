@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 1 Executing TinyTeX in TeXworks | PC Reference book</title>
+  <title>Chapter 9 Software | PC Reference book</title>
   <meta name="description" content="This is a collection of useful PC knowledge" />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 1 Executing TinyTeX in TeXworks | PC Reference book" />
+  <meta property="og:title" content="Chapter 9 Software | PC Reference book" />
   <meta property="og:type" content="book" />
   
   <meta property="og:image" content="figures/01_cover/Cover.svg" />
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="retodomax/PC_Ref_Book" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 1 Executing TinyTeX in TeXworks | PC Reference book" />
+  <meta name="twitter:title" content="Chapter 9 Software | PC Reference book" />
   
   <meta name="twitter:description" content="This is a collection of useful PC knowledge" />
   <meta name="twitter:image" content="figures/01_cover/Cover.svg" />
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   <link rel="shortcut icon" href="figures/00_icon/icon2.ico" type="image/x-icon" />
-<link rel="prev" href="index.html"/>
-<link rel="next" href="reference-management-with-latex.html"/>
+<link rel="prev" href="zotero.html"/>
+<link rel="next" href="linux-clouds.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -228,36 +228,94 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="executing-tinytex-in-texworks" class="section level1">
-<h1><span class="header-section-number">Chapter 1</span> Executing TinyTeX in TeXworks</h1>
-<p>(Anleitung on Windows)</p>
-<div id="write-command-line-code" class="section level2">
-<h2><span class="header-section-number">1.1</span> Write Command line code</h2>
-<p>Write a text file with the following command line code</p>
-<p>On Windows:</p>
-<p><code>"C:\Program Files\R\R-3.6.1\bin\Rscript.exe" -e "tinytex::pdflatex('%1')"</code></p>
-<p>If the command <code>Rscript</code> is in the PATH (can be found by the shell which might be the case on Linux) this command might be sufficient:</p>
-<p><code>Rscript -e "tinytex::pdflatex('%1')"</code></p>
-</div>
-<div id="save" class="section level2">
-<h2><span class="header-section-number">1.2</span> Save</h2>
-<p>Save the text file as batch file (e.g. <code>RetoTinyTeX.bat</code>) at a stable location on your computer.</p>
-<p>(on Linux another type of executable file e.g. <code>.sh</code>)</p>
-</div>
-<div id="add-as-engine" class="section level2">
-<h2><span class="header-section-number">1.3</span> Add as engine</h2>
-<p>Open TeXworks, go to <code>Edit</code> –&gt; `<code>Preferences...</code> –&gt; <code>Typesetting</code></p>
-<p>At Processing tools click the Plus button. Opens Window “Tool Configuration”</p>
+<div id="software" class="section level1">
+<h1><span class="header-section-number">Chapter 9</span> Software</h1>
+<div id="main-categories" class="section level2">
+<h2><span class="header-section-number">9.1</span> Main categories</h2>
 <ul>
-<li>Name: RetoTinyTeX</li>
-<li>Program: C:/Users/Reto/OneDrive - ETHZ/Dokumente/R/RetoTinyTeX/RetoTinyTeX.bat</li>
-<li>Arguments: $fullname</li>
+<li><code>tar.gz</code> and other archive files
+<ul>
+<li>Store source code or compiled programs</li>
+<li>You can choose where to put the software on your hard drive</li>
+<li>Independent of package manager</li>
+<li>Difficult to uninstall (search for uninstall script) and update</li>
+<li>Does not manage dependencies</li>
+</ul></li>
+<li><code>.deb</code> files
+<ul>
+<li>“intelligent tar file” which contains information about version and dependencies</li>
+<li><code>.deb</code> software from repositories can be installed/updated/removed via package manger</li>
+<li>package managers
+<ul>
+<li><code>apt</code> from console</li>
+<li>Muon</li>
+</ul></li>
+<li>automatically manages package dependencies and updates</li>
+</ul></li>
+<li>Images (snap, appimage, flatpack)
+<ul>
+<li>Include all dependencies within image
+<ul>
+<li>Advantage: work on all linux platforms</li>
+<li>Disadvantage: large file size</li>
+</ul></li>
+</ul></li>
+<li>Further Information
+<ul>
+<li><a href="https://www.reddit.com/r/Ubuntu/comments/j03hln/what_are_the_differences_between_snap_apt/">Reddit</a></li>
+</ul></li>
 </ul>
-<p>Click OK and choose RetoTinyTeX as your default Processing tools</p>
 </div>
-<div id="useful-links" class="section level2">
-<h2><span class="header-section-number">1.4</span> Useful links</h2>
-<p><a href="https://tex.stackexchange.com/questions/85417/configuring-texworks-processing-tools?newreg=f316adb0b447443fb618ea7e87e5dded" class="uri">https://tex.stackexchange.com/questions/85417/configuring-texworks-processing-tools?newreg=f316adb0b447443fb618ea7e87e5dded</a></p>
+<div id="repositories" class="section level2">
+<h2><span class="header-section-number">9.2</span> Repositories</h2>
+<ul>
+<li>There are large repositories which store current <code>.deb</code> files and images</li>
+<li>The repositories are stored in <code>/etc/apt/sources.list</code> and <code>/etc/apt/sources.list.d</code></li>
+<li>have a look at them with <code>egrep -v '^#|^ *$' /etc/apt/sources.list /etc/apt/sources.list.d/*</code></li>
+</ul>
+</div>
+<div id="package-managers" class="section level2">
+<h2><span class="header-section-number">9.3</span> Package Managers</h2>
+<p>I guess internally everything is managed with <code>apt</code> and <code>snap</code></p>
+<ul>
+<li><code>sudo apt install package_name</code></li>
+<li><code>sudo apt remove package_name</code></li>
+<li><code>sudo apt update</code> updates the list of available packages/versions. Does not install/upgrade any package.</li>
+<li><code>sudo apt upgrade</code> installs newest version of each package.</li>
+<li><code>sudo apt search</code> Search for package (by name or description) in Kubuntu repositories.</li>
+</ul>
+<p>GUI versions</p>
+<ul>
+<li>Discover (Software Center)
+<ul>
+<li>Installs and updates <code>.deb</code> files and Images (snap) from your repositories</li>
+</ul></li>
+<li>Muon Package Manager
+<ul>
+<li>Installs and updates <code>.deb</code> files from your repositories</li>
+</ul></li>
+</ul>
+</div>
+<div id="manual-installation" class="section level2">
+<h2><span class="header-section-number">9.4</span> Manual installation</h2>
+<p><a href="https://help.ubuntu.com/kubuntu/desktopguide/C/manual-install.html">How to install external software</a></p>
+<ul>
+<li><code>.deb</code> files
+<ul>
+<li>Download and install/remove with Muon</li>
+<li>Can be uninstalled with <code>sudo apt-get remove package_name</code></li>
+</ul></li>
+<li>Tarball
+<ul>
+<li>Software within a Tarball might be precompiled (ready to use) or only the source (<a href="https://help.ubuntu.com/community/CompilingSoftware">which needs to be compiled</a>)</li>
+<li>Uninstall
+<ul>
+<li>Maybe software was installed via <code>apt</code> therefore check in package manager if software can be removed there.</li>
+<li>Otherwise the software can simply be deleted in <code>/opt/package_name</code>?</li>
+</ul></li>
+</ul></li>
+</ul>
+<p>External software (not hosted on Kubuntu software repositories) are usually installed in <code>/opt/</code> (e.g. Zotero, Zoom, MineTime, …).</p>
 
 </div>
 </div>
@@ -266,8 +324,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="reference-management-with-latex.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="zotero.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="linux-clouds.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -298,7 +356,7 @@ gitbook.start({
 "size": 1
 },
 "edit": {
-"link": "https://github.com/retodomax/PC_Ref_Book/edit/master/01-tinytex.Rmd",
+"link": "https://github.com/retodomax/PC_Ref_Book/edit/master/08-Software.Rmd",
 "text": "Edit"
 },
 "history": {

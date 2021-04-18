@@ -1,0 +1,13 @@
+# Inkscape
+
+## Latex in Inkscape
+
+* Write formulas with [Textext](https://textext.github.io/textext/)
+  - Preamble file: create `package_default.tex` file which contains `\input{RetoMath.sty}` and maybe additional packages for individual projects
+* Write text in [CMU Serif]
+  - Download the font Computer Modern Unicode (CMU) with `sudo apt-get install fonts-cmu`
+* Use `PDF+LaTeX`
+  - http://tug.ctan.org/tex-archive/info/svg-inkscape/InkscapePDFLaTeX.pdf
+  - https://wiki.inkscape.org/wiki/index.php/LaTeX#How_to_turn_an_Inkscape_drawing_into_an_editable_LaTeX_document
+
+Strange behavior: some packages (e.g. `blkarray`) are not found with `pdflatex` and `lualatex`. However, using `pdflatex` in the console works with the package. I do not know the reason for this problem. Possible explanation see [this issue](https://github.com/textext/textext/issues/48). Easy fix: Use `xelatex` instead and it will work. Maybe see if the problem still exists after a new installation of Inkscape and Textext.

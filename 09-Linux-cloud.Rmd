@@ -1,0 +1,21 @@
+# Linux Clouds
+
+With client
+
+* OwnCloud (Polybox)
+* [Dropbox](https://www.dropbox.com/install-linux)
+  - Might only work in Gnome's Nautilus
+
+Without client
+
+* Google drive
+* Onedrive
+
+
+## Set up Google drive
+
+* https://itsfoss.com/use-google-drive-linux/
+* https://www.howtogeek.com/451262/how-to-use-rclone-to-back-up-to-google-drive-on-linux/
+* https://rclone.org/
+
+

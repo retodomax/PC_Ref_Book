@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 2 Reference management with LaTeX | PC Reference book</title>
   <meta name="description" content="This is a collection of useful PC knowledge" />
-  <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 2 Reference management with LaTeX | PC Reference book" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="Reto Zihlmann" />
 
 
-<meta name="date" content="2020-05-14" />
+<meta name="date" content="2021-04-18" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -32,7 +32,7 @@
   
   <link rel="shortcut icon" href="figures/00_icon/icon2.ico" type="image/x-icon" />
 <link rel="prev" href="executing-tinytex-in-texworks.html"/>
-<link rel="next" href="remap-keybord.html"/>
+<link rel="next" href="make-global-sty-and-bib-files.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -50,6 +50,9 @@
 
 
 
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
 <!––JavaScript code for Show/Hide buttons––>
 <!––see: https://web.stanford.edu/~naras/post/toggle-visibility-of-solutions-in-bookdown/––>
 <!––and see: https://www.w3schools.com/howto/howto_js_toggle_hide_show.asp––>
@@ -67,9 +70,9 @@ function myFunction(myid) {
 
 
 <style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode { white-space: pre; position: relative; }
 pre.sourceCode { margin: 0; }
@@ -78,14 +81,16 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(data-line-number);
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
+    border: none; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -94,9 +99,9 @@ pre.numberSource a.sourceLine::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {  }
+  {   }
 @media screen {
-a.sourceLine::before { text-decoration: underline; }
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -157,20 +162,51 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.2" data-path="reference-management-with-latex.html"><a href="reference-management-with-latex.html#in-texworks"><i class="fa fa-check"></i><b>2.2</b> In Texworks</a></li>
 <li class="chapter" data-level="2.3" data-path="reference-management-with-latex.html"><a href="reference-management-with-latex.html#in-rstudio"><i class="fa fa-check"></i><b>2.3</b> In RStudio</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="remap-keybord.html"><a href="remap-keybord.html"><i class="fa fa-check"></i><b>3</b> Remap keybord</a><ul>
-<li class="chapter" data-level="3.1" data-path="remap-keybord.html"><a href="remap-keybord.html#remap-caps-lock-to-alt-grright-alt"><i class="fa fa-check"></i><b>3.1</b> Remap <code>Caps lock</code> to <code>Alt Gr</code>/<code>right Alt</code></a></li>
-<li class="chapter" data-level="3.2" data-path="remap-keybord.html"><a href="remap-keybord.html#make-new-keyboard-shortcut-with-autohotkey"><i class="fa fa-check"></i><b>3.2</b> Make new Keyboard Shortcut with Autohotkey</a></li>
+<li class="chapter" data-level="3" data-path="make-global-sty-and-bib-files.html"><a href="make-global-sty-and-bib-files.html"><i class="fa fa-check"></i><b>3</b> Make global sty and bib files</a></li>
+<li class="chapter" data-level="4" data-path="remap-keybord.html"><a href="remap-keybord.html"><i class="fa fa-check"></i><b>4</b> Remap keybord</a><ul>
+<li class="chapter" data-level="4.1" data-path="remap-keybord.html"><a href="remap-keybord.html#remap-caps-lock-to-alt-grright-alt"><i class="fa fa-check"></i><b>4.1</b> Remap <code>Caps lock</code> to <code>Alt Gr</code>/<code>right Alt</code></a></li>
+<li class="chapter" data-level="4.2" data-path="remap-keybord.html"><a href="remap-keybord.html#make-new-keyboard-shortcut-with-autohotkey"><i class="fa fa-check"></i><b>4.2</b> Make new Keyboard Shortcut with Autohotkey</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="linux-setup-kubuntu.html"><a href="linux-setup-kubuntu.html"><i class="fa fa-check"></i><b>4</b> Linux setup Kubuntu</a><ul>
-<li class="chapter" data-level="4.1" data-path="linux-setup-kubuntu.html"><a href="linux-setup-kubuntu.html#installation"><i class="fa fa-check"></i><b>4.1</b> Installation</a></li>
-<li class="chapter" data-level="4.2" data-path="linux-setup-kubuntu.html"><a href="linux-setup-kubuntu.html#easy-tasks"><i class="fa fa-check"></i><b>4.2</b> Easy tasks</a></li>
-<li class="chapter" data-level="4.3" data-path="linux-setup-kubuntu.html"><a href="linux-setup-kubuntu.html#installing-r"><i class="fa fa-check"></i><b>4.3</b> Installing R</a></li>
-<li class="chapter" data-level="4.4" data-path="linux-setup-kubuntu.html"><a href="linux-setup-kubuntu.html#remap-keyboard"><i class="fa fa-check"></i><b>4.4</b> Remap Keyboard</a></li>
-<li class="chapter" data-level="4.5" data-path="linux-setup-kubuntu.html"><a href="linux-setup-kubuntu.html#installing-latex"><i class="fa fa-check"></i><b>4.5</b> Installing Latex</a></li>
-<li class="chapter" data-level="4.6" data-path="linux-setup-kubuntu.html"><a href="linux-setup-kubuntu.html#troubles"><i class="fa fa-check"></i><b>4.6</b> Troubles</a><ul>
-<li class="chapter" data-level="4.6.1" data-path="linux-setup-kubuntu.html"><a href="linux-setup-kubuntu.html#locales"><i class="fa fa-check"></i><b>4.6.1</b> Locales</a></li>
-<li class="chapter" data-level="4.6.2" data-path="linux-setup-kubuntu.html"><a href="linux-setup-kubuntu.html#section"><i class="fa fa-check"></i><b>4.6.2</b> </a></li>
+<li class="chapter" data-level="5" data-path="linux-setup-kubuntu.html"><a href="linux-setup-kubuntu.html"><i class="fa fa-check"></i><b>5</b> Linux setup Kubuntu</a><ul>
+<li class="chapter" data-level="5.1" data-path="linux-setup-kubuntu.html"><a href="linux-setup-kubuntu.html#installation"><i class="fa fa-check"></i><b>5.1</b> Installation</a></li>
+<li class="chapter" data-level="5.2" data-path="linux-setup-kubuntu.html"><a href="linux-setup-kubuntu.html#easy-tasks"><i class="fa fa-check"></i><b>5.2</b> Easy tasks</a></li>
+<li class="chapter" data-level="5.3" data-path="linux-setup-kubuntu.html"><a href="linux-setup-kubuntu.html#installing-r"><i class="fa fa-check"></i><b>5.3</b> Installing R</a></li>
+<li class="chapter" data-level="5.4" data-path="linux-setup-kubuntu.html"><a href="linux-setup-kubuntu.html#remap-keyboard"><i class="fa fa-check"></i><b>5.4</b> Remap Keyboard</a></li>
+<li class="chapter" data-level="5.5" data-path="linux-setup-kubuntu.html"><a href="linux-setup-kubuntu.html#installing-latex"><i class="fa fa-check"></i><b>5.5</b> Installing Latex</a></li>
+<li class="chapter" data-level="5.6" data-path="linux-setup-kubuntu.html"><a href="linux-setup-kubuntu.html#installing-aoe2"><i class="fa fa-check"></i><b>5.6</b> Installing AOE2</a></li>
+<li class="chapter" data-level="5.7" data-path="linux-setup-kubuntu.html"><a href="linux-setup-kubuntu.html#set-up-vpn"><i class="fa fa-check"></i><b>5.7</b> Set up VPN</a></li>
+<li class="chapter" data-level="5.8" data-path="linux-setup-kubuntu.html"><a href="linux-setup-kubuntu.html#set-up-backup"><i class="fa fa-check"></i><b>5.8</b> Set up Backup</a></li>
+<li class="chapter" data-level="5.9" data-path="linux-setup-kubuntu.html"><a href="linux-setup-kubuntu.html#dualboot-with-windows"><i class="fa fa-check"></i><b>5.9</b> Dualboot with Windows</a></li>
+<li class="chapter" data-level="5.10" data-path="linux-setup-kubuntu.html"><a href="linux-setup-kubuntu.html#troubles"><i class="fa fa-check"></i><b>5.10</b> Troubles</a><ul>
+<li class="chapter" data-level="5.10.1" data-path="linux-setup-kubuntu.html"><a href="linux-setup-kubuntu.html#locales"><i class="fa fa-check"></i><b>5.10.1</b> Locales</a></li>
+<li class="chapter" data-level="5.10.2" data-path="linux-setup-kubuntu.html"><a href="linux-setup-kubuntu.html#dvd"><i class="fa fa-check"></i><b>5.10.2</b> DVD</a></li>
+<li class="chapter" data-level="5.10.3" data-path="linux-setup-kubuntu.html"><a href="linux-setup-kubuntu.html#scrolling-with-touchpat"><i class="fa fa-check"></i><b>5.10.3</b> Scrolling with touchpat</a></li>
+<li class="chapter" data-level="5.10.4" data-path="linux-setup-kubuntu.html"><a href="linux-setup-kubuntu.html#during-shutdown-computer-goes-to-sleep-mode-if-lid-is-closed"><i class="fa fa-check"></i><b>5.10.4</b> During shutdown, computer goes to sleep mode if lid is closed</a></li>
+<li class="chapter" data-level="5.10.5" data-path="linux-setup-kubuntu.html"><a href="linux-setup-kubuntu.html#search-in-dolphin-is-slow"><i class="fa fa-check"></i><b>5.10.5</b> Search in Dolphin is slow</a></li>
 </ul></li>
+<li class="chapter" data-level="5.11" data-path="linux-setup-kubuntu.html"><a href="linux-setup-kubuntu.html#useful-software"><i class="fa fa-check"></i><b>5.11</b> Useful software</a></li>
+<li class="chapter" data-level="5.12" data-path="linux-setup-kubuntu.html"><a href="linux-setup-kubuntu.html#inkscape"><i class="fa fa-check"></i><b>5.12</b> Inkscape</a></li>
+<li class="chapter" data-level="5.13" data-path="linux-setup-kubuntu.html"><a href="linux-setup-kubuntu.html#maybe-useful"><i class="fa fa-check"></i><b>5.13</b> Maybe useful</a></li>
+<li class="chapter" data-level="5.14" data-path="linux-setup-kubuntu.html"><a href="linux-setup-kubuntu.html#connect-with-phone"><i class="fa fa-check"></i><b>5.14</b> Connect with Phone</a></li>
+<li class="chapter" data-level="5.15" data-path="linux-setup-kubuntu.html"><a href="linux-setup-kubuntu.html#mouse-middle-click-scrolling-auto-scrolling"><i class="fa fa-check"></i><b>5.15</b> Mouse middle click scrolling (Auto-Scrolling)</a></li>
+<li class="chapter" data-level="5.16" data-path="linux-setup-kubuntu.html"><a href="linux-setup-kubuntu.html#eth-stuff"><i class="fa fa-check"></i><b>5.16</b> ETH stuff</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="backup.html"><a href="backup.html"><i class="fa fa-check"></i><b>6</b> Backup</a></li>
+<li class="chapter" data-level="7" data-path="inkscape-1.html"><a href="inkscape-1.html"><i class="fa fa-check"></i><b>7</b> Inkscape</a><ul>
+<li class="chapter" data-level="7.1" data-path="inkscape-1.html"><a href="inkscape-1.html#latex-in-inkscape"><i class="fa fa-check"></i><b>7.1</b> Latex in Inkscape</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="zotero.html"><a href="zotero.html"><i class="fa fa-check"></i><b>8</b> Zotero</a><ul>
+<li class="chapter" data-level="8.1" data-path="zotero.html"><a href="zotero.html#download-zotero"><i class="fa fa-check"></i><b>8.1</b> Download Zotero</a></li>
+<li class="chapter" data-level="8.2" data-path="zotero.html"><a href="zotero.html#syncing"><i class="fa fa-check"></i><b>8.2</b> Syncing</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="software.html"><a href="software.html"><i class="fa fa-check"></i><b>9</b> Software</a><ul>
+<li class="chapter" data-level="9.1" data-path="software.html"><a href="software.html#main-categories"><i class="fa fa-check"></i><b>9.1</b> Main categories</a></li>
+<li class="chapter" data-level="9.2" data-path="software.html"><a href="software.html#repositories"><i class="fa fa-check"></i><b>9.2</b> Repositories</a></li>
+<li class="chapter" data-level="9.3" data-path="software.html"><a href="software.html#package-managers"><i class="fa fa-check"></i><b>9.3</b> Package Managers</a></li>
+<li class="chapter" data-level="9.4" data-path="software.html"><a href="software.html#manual-installation"><i class="fa fa-check"></i><b>9.4</b> Manual installation</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="linux-clouds.html"><a href="linux-clouds.html"><i class="fa fa-check"></i><b>10</b> Linux Clouds</a><ul>
+<li class="chapter" data-level="10.1" data-path="linux-clouds.html"><a href="linux-clouds.html#set-up-google-drive"><i class="fa fa-check"></i><b>10.1</b> Set up Google drive</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -207,14 +243,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>biber</li>
 <li>pdflatex (again)</li>
 </ol>
-<p>Or write bash script which runs the comands in this order</p>
+<p>Or write bash script which runs the commands in this order</p>
 </div>
 <div id="in-rstudio" class="section level2">
 <h2><span class="header-section-number">2.3</span> In RStudio</h2>
-<p>Biber and knitr can make some problems togeter (see <a href="https://tex.stackexchange.com/questions/71565/knitr-and-biblatex">here</a>)</p>
-<p>Easy workarround: use backend bibtex instead of backend biber</p>
+<p>Biber and knitr can make some problems together (see <a href="https://tex.stackexchange.com/questions/71565/knitr-and-biblatex">here</a>)</p>
+<p>Easy workaround: use back-end bibtex instead of back-end biber</p>
 <p><code>\usepackage[backend=bibtex]{biblatex}</code></p>
-
 </div>
 </div>
             </section>
@@ -223,7 +258,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
         </div>
       </div>
 <a href="executing-tinytex-in-texworks.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="remap-keybord.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="make-global-sty-and-bib-files.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

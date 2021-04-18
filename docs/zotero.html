@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 1 Executing TinyTeX in TeXworks | PC Reference book</title>
+  <title>Chapter 8 Zotero | PC Reference book</title>
   <meta name="description" content="This is a collection of useful PC knowledge" />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 1 Executing TinyTeX in TeXworks | PC Reference book" />
+  <meta property="og:title" content="Chapter 8 Zotero | PC Reference book" />
   <meta property="og:type" content="book" />
   
   <meta property="og:image" content="figures/01_cover/Cover.svg" />
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="retodomax/PC_Ref_Book" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 1 Executing TinyTeX in TeXworks | PC Reference book" />
+  <meta name="twitter:title" content="Chapter 8 Zotero | PC Reference book" />
   
   <meta name="twitter:description" content="This is a collection of useful PC knowledge" />
   <meta name="twitter:image" content="figures/01_cover/Cover.svg" />
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   <link rel="shortcut icon" href="figures/00_icon/icon2.ico" type="image/x-icon" />
-<link rel="prev" href="index.html"/>
-<link rel="next" href="reference-management-with-latex.html"/>
+<link rel="prev" href="inkscape-1.html"/>
+<link rel="next" href="software.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -228,36 +228,95 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="executing-tinytex-in-texworks" class="section level1">
-<h1><span class="header-section-number">Chapter 1</span> Executing TinyTeX in TeXworks</h1>
-<p>(Anleitung on Windows)</p>
-<div id="write-command-line-code" class="section level2">
-<h2><span class="header-section-number">1.1</span> Write Command line code</h2>
-<p>Write a text file with the following command line code</p>
-<p>On Windows:</p>
-<p><code>"C:\Program Files\R\R-3.6.1\bin\Rscript.exe" -e "tinytex::pdflatex('%1')"</code></p>
-<p>If the command <code>Rscript</code> is in the PATH (can be found by the shell which might be the case on Linux) this command might be sufficient:</p>
-<p><code>Rscript -e "tinytex::pdflatex('%1')"</code></p>
-</div>
-<div id="save" class="section level2">
-<h2><span class="header-section-number">1.2</span> Save</h2>
-<p>Save the text file as batch file (e.g. <code>RetoTinyTeX.bat</code>) at a stable location on your computer.</p>
-<p>(on Linux another type of executable file e.g. <code>.sh</code>)</p>
-</div>
-<div id="add-as-engine" class="section level2">
-<h2><span class="header-section-number">1.3</span> Add as engine</h2>
-<p>Open TeXworks, go to <code>Edit</code> –&gt; `<code>Preferences...</code> –&gt; <code>Typesetting</code></p>
-<p>At Processing tools click the Plus button. Opens Window “Tool Configuration”</p>
+<div id="zotero" class="section level1">
+<h1><span class="header-section-number">Chapter 8</span> Zotero</h1>
+<div id="download-zotero" class="section level2">
+<h2><span class="header-section-number">8.1</span> Download Zotero</h2>
 <ul>
-<li>Name: RetoTinyTeX</li>
-<li>Program: C:/Users/Reto/OneDrive - ETHZ/Dokumente/R/RetoTinyTeX/RetoTinyTeX.bat</li>
-<li>Arguments: $fullname</li>
+<li>Download the tarball from the <a href="https://www.zotero.org/download/">Zotero website</a>
+<ul>
+<li>Maybe try out better alternative: <a href="https://github.com/retorquere/zotero-deb" class="uri">https://github.com/retorquere/zotero-deb</a>
+<ul>
+<li>Zotero will be installed as a package!</li>
+</ul></li>
+<li>Detailed <a href="https://www.zotero.org/support/installation">Installation help</a></li>
+<li>Do not use zotero-snap from Software center (always prompts some information at startup)</li>
+</ul></li>
+<li>Download Browser Connector</li>
+<li>Additional plugins
+<ul>
+<li><a href="https://retorque.re/zotero-better-bibtex/">Better Bibtex</a>
+<ul>
+<li>Support for Latex/BibLaTeX citation</li>
+</ul></li>
+<li><a href="http://zotfile.com/">ZotFile</a></li>
+</ul></li>
 </ul>
-<p>Click OK and choose RetoTinyTeX as your default Processing tools</p>
 </div>
-<div id="useful-links" class="section level2">
-<h2><span class="header-section-number">1.4</span> Useful links</h2>
-<p><a href="https://tex.stackexchange.com/questions/85417/configuring-texworks-processing-tools?newreg=f316adb0b447443fb618ea7e87e5dded" class="uri">https://tex.stackexchange.com/questions/85417/configuring-texworks-processing-tools?newreg=f316adb0b447443fb618ea7e87e5dded</a></p>
+<div id="syncing" class="section level2">
+<h2><span class="header-section-number">8.2</span> Syncing</h2>
+<ul>
+<li>First read these information
+<ul>
+<li><a href="https://www.hastac.org/blogs/craigeley/2013/02/25/ipad-workflow-zotero-zotfile-zotpad">Zotero-Zotfile-Zotpad Workflow</a></li>
+<li><a href="https://www.zotero.org/support/sync">Zotero syncing</a></li>
+<li><a href="https://www.zotero.org/support/attaching_files">Zotero add files</a></li>
+</ul></li>
+<li>Summary
+<ul>
+<li>Zotero syncing has two parts
+<ul>
+<li>Data syncing
+<ul>
+<li>Library items, notes, links, tags, …, Everything except attachment files</li>
+<li>Free and unlimited with Zotero account</li>
+<li>Find your entire library (without attachment) in your <a href="https://www.zotero.org/mylibrary">web library</a></li>
+<li>Automatically syncs library of all computers which use the same Zotero account</li>
+</ul></li>
+<li>File syncing
+<ul>
+<li>Syncing of all attachment files</li>
+<li>4 Options
+<ul>
+<li>Zotero file storage (only 300 MB are free)</li>
+<li>WebDAV (Provide your own WebDAV server, e.g. polybox, difficult to set up)</li>
+<li>Sync your <code>Zotero/storage</code> folder with any cloud service</li>
+<li>Connect attachment files with library entries as “linked files” using <a href="https://www.zotero.org/mylibrary">ZotFile</a></li>
+</ul></li>
+<li>Only the last allows to access the pdf in a file browser (e.g. outside of Zotero, on mobile phone). However it also implies that the files will be stored as linked files which has some disadvantages (see below)</li>
+</ul></li>
+</ul></li>
+<li>Ways to store attachment files
+<ul>
+<li>Stored Files
+<ul>
+<li><code>+</code> If you delete the item, the pdf is also deleted</li>
+<li><code>-</code> pdf located within complicated folder name</li>
+</ul></li>
+<li>Linked files
+<ul>
+<li><code>-</code> If you delete the item in Zotero, you manually need to delete the pdf in the “Location of files”</li>
+<li><code>+</code> pdf located in specified folder with configurable folder structure</li>
+</ul></li>
+</ul></li>
+<li>Change between Stored Files and Linked files
+<ul>
+<li>Luckily this is relatively easy (with ZotFile installed)</li>
+<li>Go to <code>Tools &gt; ZotFile Preferences... &gt; General Settings &gt; Location of Files</code></li>
+<li>Now you can switch between
+<ul>
+<li><code>Attach stored copy of file(s)</code> = Stored Files</li>
+<li><code>Custom Location</code> = Linked files</li>
+</ul></li>
+<li>With custom location also specify <code>Use subfolder defined by /%A/</code> which will make folders with the first letter of author.
+<ul>
+<li>After setting the preference, the existing files will have to be manually selected and changes.</li>
+<li><code>Select a file &gt; right click &gt; Manage Attachments &gt; Rename Attachments</code></li>
+<li>If the store type of all files should be changed, go to <code>My Library</code> and select all files at once to perform <code>Rename Attachments</code>.</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
 
 </div>
 </div>
@@ -266,8 +325,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="reference-management-with-latex.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="inkscape-1.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="software.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -298,7 +357,7 @@ gitbook.start({
 "size": 1
 },
 "edit": {
-"link": "https://github.com/retodomax/PC_Ref_Book/edit/master/01-tinytex.Rmd",
+"link": "https://github.com/retodomax/PC_Ref_Book/edit/master/07-Zotero.Rmd",
 "text": "Edit"
 },
 "history": {

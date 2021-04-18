@@ -1,0 +1,53 @@
+# Zotero
+
+## Download Zotero
+
+* Download the tarball from the [Zotero website](https://www.zotero.org/download/)
+  - Maybe try out better alternative: https://github.com/retorquere/zotero-deb
+    + Zotero will be installed as a package!
+  - Detailed [Installation help](https://www.zotero.org/support/installation)
+  - Do not use zotero-snap from Software center (always prompts some information at startup)
+* Download Browser Connector
+* Additional plugins
+  - [Better Bibtex](https://retorque.re/zotero-better-bibtex/)
+    + Support for Latex/BibLaTeX citation
+  - [ZotFile](http://zotfile.com/)
+
+## Syncing
+
+* First read these information
+  - [Zotero-Zotfile-Zotpad Workflow](https://www.hastac.org/blogs/craigeley/2013/02/25/ipad-workflow-zotero-zotfile-zotpad)
+  - [Zotero syncing](https://www.zotero.org/support/sync)
+  - [Zotero add files](https://www.zotero.org/support/attaching_files)
+* Summary
+  - Zotero syncing has two parts
+    + Data syncing
+      - Library items, notes, links, tags, ..., Everything except attachment files
+      - Free and unlimited with Zotero account
+      - Find your entire library (without attachment) in your [web library](https://www.zotero.org/mylibrary)
+      - Automatically syncs library of all computers which use the same Zotero account
+    + File syncing
+      - Syncing of all attachment files
+      - 4 Options
+        + Zotero file storage (only 300 MB are free)
+        + WebDAV (Provide your own WebDAV server, e.g. polybox, difficult to set up)
+        + Sync your `Zotero/storage` folder with any cloud service
+        + Connect attachment files with library entries as "linked files" using [ZotFile](https://www.zotero.org/mylibrary)
+      - Only the last allows to access the pdf in a file browser (e.g. outside of Zotero, on mobile phone). However it also implies that the files will be stored as linked files which has some disadvantages (see below)
+  - Ways to store attachment files 
+    + Stored Files
+      - `+` If you delete the item, the pdf is also deleted
+      - `-` pdf located within complicated folder name
+    + Linked files
+      - `-` If you delete the item in Zotero, you manually need to delete the pdf in the "Location of files"
+      - `+` pdf located in specified folder with configurable folder structure
+  - Change between Stored Files and Linked files
+    + Luckily this is relatively easy (with ZotFile installed)
+    + Go to `Tools > ZotFile Preferences... > General Settings > Location of Files`
+    + Now you can switch between
+      - `Attach stored copy of file(s)` = Stored Files
+      - `Custom Location` = Linked files
+    + With custom location also specify `Use subfolder defined by /%A/` which will make folders with the first letter of author.
+      - After setting the preference, the existing files will have to be manually selected and changes.
+      - `Select a file > right click > Manage Attachments > Rename Attachments`
+      - If the store type of all files should be changed, go to `My Library` and select all files at once to perform `Rename Attachments`.

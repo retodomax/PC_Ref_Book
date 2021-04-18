@@ -1,0 +1,65 @@
+# Software
+
+
+## Main categories
+
+* `tar.gz` and other archive files
+  - Store source code or compiled programs
+  - You can choose where to put the software on your hard drive
+  - Independent of package manager
+  - Difficult to uninstall (search for uninstall script) and update
+  - Does not manage dependencies
+* `.deb` files
+  - "intelligent tar file" which contains information about version and dependencies
+  - `.deb` software from repositories can be installed/updated/removed via package manger
+  - package managers
+    + `apt` from console
+    + Muon
+  - automatically manages package dependencies and updates
+* Images (snap, appimage, flatpack)
+  - Include all dependencies within image
+    + Advantage: work on all linux platforms
+    + Disadvantage: large file size
+* Further Information
+  - [Reddit](https://www.reddit.com/r/Ubuntu/comments/j03hln/what_are_the_differences_between_snap_apt/)
+
+## Repositories
+
+* There are large repositories which store current `.deb` files and images
+* The repositories are stored in `/etc/apt/sources.list` and `/etc/apt/sources.list.d`
+* have a look at them with `egrep -v '^#|^ *$' /etc/apt/sources.list /etc/apt/sources.list.d/*`
+
+## Package Managers
+
+I guess internally everything is managed with `apt` and `snap`
+
+* `sudo apt install package_name`
+* `sudo apt remove package_name`
+* `sudo apt update` updates the list of available packages/versions. Does not install/upgrade any package.
+* `sudo apt upgrade` installs newest version of each package.
+* `sudo apt search` Search for package (by name or description) in Kubuntu repositories.
+
+GUI versions
+
+* Discover (Software Center)
+  - Installs and updates `.deb` files and Images (snap) from your repositories
+* Muon Package Manager
+  - Installs and updates `.deb` files from your repositories
+
+## Manual installation
+
+
+
+[How to install external software](https://help.ubuntu.com/kubuntu/desktopguide/C/manual-install.html)
+
+* `.deb` files
+  - Download and install/remove with Muon
+  - Can be uninstalled with `sudo apt-get remove package_name`
+* Tarball
+  - Software within a Tarball might be precompiled (ready to use) or only the source ([which needs to be compiled](https://help.ubuntu.com/community/CompilingSoftware))
+  - Uninstall
+    + Maybe software was installed via `apt` therefore check in package manager if software can be removed there.
+    + Otherwise the software can simply be deleted in `/opt/package_name`?
+
+External software (not hosted on Kubuntu software repositories) are usually installed in `/opt/` (e.g. Zotero, Zoom, MineTime, ...).
+

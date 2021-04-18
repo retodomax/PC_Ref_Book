@@ -15,14 +15,27 @@ Always run
 2. biber
 3. pdflatex (again)
 
-Or write bash script which runs the comands in this order
+Or write bash script which runs the commands in this order
 
 ## In RStudio
 
-Biber and knitr can make some problems togeter (see [here](https://tex.stackexchange.com/questions/71565/knitr-and-biblatex))
+Biber and knitr can make some problems together (see [here](https://tex.stackexchange.com/questions/71565/knitr-and-biblatex))
 
-Easy workarround: use backend bibtex instead of backend biber
+Easy workaround: use back-end bibtex instead of back-end biber
 
 `\usepackage[backend=bibtex]{biblatex}`
 
 
+# Make global sty and bib files
+
+See for example
+
+* [Where do I place my own .sty files](https://tex.stackexchange.com/questions/1137/where-do-i-place-my-own-sty-or-cls-files-to-make-them-available-to-all-my-te)
+* [.bib library file in a different directory](https://tex.stackexchange.com/questions/6805/bib-library-file-in-a-different-directory-how-to-use-mendeley-centralised-b)
+
+
+1. In Console type `kpsewhich -var-value=TEXMFHOME`
+2. Probably something like `~/texmf-local/`
+3. Create directory and additional folders `~/texmf-local/tex/latex/commonstuff/`
+4. Create directory and folders `texmf-local/bibtex/bib/`
+5. Within the subfolders, save your global `.sty` and `.bib` files
